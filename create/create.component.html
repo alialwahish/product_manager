@@ -1,0 +1,31 @@
+<h1>
+  Create New Product
+</h1>
+<div class="form-group">
+<form #productForm="ngForm" name="productForm" (submit)="createProduct(productForm)" method="POST">
+  <label >Title: </label>
+  <input class="form-control" type="text"
+ name="title" 
+ required
+ minlength="3"
+ [(ngModel)]='product.title'
+ #title="ngModel"><br>
+ <label  >Price: </label>
+ <input class="form-control" type="number"
+ name="price" 
+ required
+ min="1"
+ [(ngModel)]='product.price'
+ #price="ngModel"><br>
+
+ <label >Image url: </label>
+ <input class="form-control" type="text"
+ name="img_url" 
+ required
+ minlength="3"
+ [(ngModel)]='product.img_url'
+ #img_url="ngModel">
+  <button class="btn">Create</button>
+</form>
+<button class="btn" (click)="cancel()">Cancel</button>
+</div>

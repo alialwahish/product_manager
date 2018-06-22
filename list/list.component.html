@@ -1,0 +1,26 @@
+<style>
+    .img{
+        width: 100px;
+        height: 100px;
+    }
+    .item{
+        outline: 2px solid black;
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        
+    }
+</style>
+
+<h1>Product List</h1>
+
+<div class="item" *ngFor="let p of products">
+<img src="{{p.img_url}}"  class="img">
+<p>{{p.title}}</p>
+<p>${{p.price}}</p>
+
+<button (click)="deleteProd(p._id)">Delete</button>
+<button [routerLink]="['/edit',p._id]">Edit</button>
+
+</div>
+
